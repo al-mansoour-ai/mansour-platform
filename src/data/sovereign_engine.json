@@ -1,0 +1,64 @@
+{
+  "pillars": [
+    {
+      "id": "pillar_1",
+      "name": "1. الحوكمة والامتثال (Governance & Compliance)",
+      "tracks": [
+        { "name": "التدقيق المؤسسي", "reports": [{ "title": "تقرير الامتثال الإداري", "questions": [{"q": "مدى موائمة الهيكل مع الأهداف؟", "example": "يوجد تداخل مهام بنسبة 10%"}], "ai_logic": "بصفتك خبيراً، حلل فجوات الحوكمة." }] },
+        { "name": "رقابة الجودة (QA/QC)", "reports": [] },
+        { "name": "الامتثال القانوني", "reports": [] },
+        { "name": "أمن المعلومات", "reports": [] },
+        { "name": "إدارة المخاطر", "reports": [] }
+      ]
+    },
+    {
+      "id": "pillar_2",
+      "name": "2. المتابعة والتقييم (M&E & Impact)",
+      "tracks": [
+        { "name": "أثر التدريب", "reports": [{ "title": "تقييم Kirkpatrick L4", "questions": [{"q": "نسبة تحسن الأداء؟", "example": "انخفاض الخطأ بنسبة 15%"}], "ai_logic": "حول النتائج المهارية إلى أثر مالي." }] },
+        { "name": "تقييم المشاريع (OECD)", "reports": [] },
+        { "name": "المسح القبلي/البعدي", "reports": [] },
+        { "name": "المتابعة الميدانية", "reports": [] },
+        { "name": "جودة التدخلات", "reports": [] }
+      ]
+    },
+    {
+      "id": "pillar_3",
+      "name": "3. الاستراتيجية والأداء (Strategy & Performance)",
+      "tracks": [
+        { "name": "التخطيط الاستراتيجي", "reports": [] },
+        { "name": "ذكاء الأعمال BI", "reports": [] },
+        { "name": "التطوير المؤسسي", "reports": [] },
+        { "name": "قياس الـ KPIs", "reports": [] },
+        { "name": "نمو الكوادر القيادية", "reports": [] }
+      ]
+    },
+    {
+      "id": "pillar_4",
+      "name": "4. المالية والمخاطر (Financial & Risk)",
+      "tracks": [
+        { "name": "جدوى اقتصادية", "reports": [] },
+        { "name": "كفاءة الإنفاق", "reports": [] },
+        { "name": "الموازنات التقديرية", "reports": [] },
+        { "name": "منع الاحتيال والفساد", "reports": [] },
+        { "name": "تقييم المخاطر المالية", "reports": [] }
+      ]
+    },
+    {
+      "id": "pillar_5",
+      "name": "5. الاستدامة والأثر (Sustainability & Impact)",
+      "tracks": [
+        { "name": "المسؤولية المجتمعية", "reports": [] },
+        { "name": "الأثر البيئي", "reports": [] },
+        { "name": "إشراك أصحاب المصلحة", "reports": [] },
+        { "name": "تقارير GRI", "reports": [] },
+        { "name": "التحول الرقمي", "reports": [] }
+      ]
+    }
+  ],
+  "subscription_model": {
+    "free": { "reports": 3, "price": "$0" },
+    "pro": { "reports": 50, "price": "$29" },
+    "enterprise": { "reports": "Unlimited", "price": "Custom" }
+  }
+}
