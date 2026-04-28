@@ -12,108 +12,75 @@ const reportConfig = {
   "8": { name: "تقرير الجرد", questions: 10, icon: "📦", desc: "مطابقة الأصول والمخزون فعلياً" }
 };
 
-export default function SovereignFinalV3() {
+export default function SovereignFinalUI() {
   const [activeTab, setActiveTab] = useState('platform');
   const [activeType, setActiveType] = useState("1");
 
   return (
-    <div dir="rtl" style={{ backgroundColor: "#f8f9fa", minHeight: "100vh", paddingBottom: "100px", fontFamily: "'Cairo', sans-serif" }}>
+    <div dir="rtl" style={{ backgroundColor: "#f4f7f6", minHeight: "100vh", paddingBottom: "100px", fontFamily: "'Cairo', sans-serif", textAlign: "right" }}>
       <Head>
         <title>منصة المنصور الاستراتيجية</title>
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet" />
       </Head>
 
-      <style dangerouslySetInnerHTML={{__html: `
-        .header-sovereign { background-color: #0a192f; color: white; padding: 40px 20px; text-align: center; border-bottom: 5px solid #d4af37; }
-        .card-container { max-width: 600px; margin: -30px auto 20px auto; padding: 0 15px; position: relative; z-index: 10; }
-        .sovereign-card { background: white; border-radius: 15px; padding: 25px; margin-bottom: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border: 1px solid #eee; }
-        .label-gold { color: #d4af37; font-weight: 900; font-size: 14px; margin-bottom: 10px; display: block; }
-        .report-title { color: #0a192f; font-weight: 900; font-size: 22px; margin-bottom: 15px; border-bottom: 2px solid #f8f9fa; padding-bottom: 10px; }
-        .sovereign-input { width: 100%; padding: 15px; border: 2px solid #f1f2f6; border-radius: 10px; font-family: 'Cairo'; font-size: 16px; margin-top: 10px; background: #fafafa; transition: 0.3s; box-sizing: border-box; }
-        .sovereign-input:focus { border-color: #d4af37; background: white; outline: none; }
-        .btn-submit { background-color: #0a192f; color: white; padding: 20px; border-radius: 12px; width: 100%; font-weight: 900; font-size: 18px; border: 2px solid #d4af37; cursor: pointer; transition: 0.3s; margin-top: 20px; }
-        .btn-submit:active { transform: scale(0.98); }
-        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #0a192f; height: 80px; display: flex; border-top: 4px solid #d4af37; z-index: 1000; }
-        .nav-btn { flex: 1; border: none; background: none; color: white; opacity: 0.6; font-family: 'Cairo'; font-weight: 700; font-size: 14px; cursor: pointer; }
-        .nav-btn.active { opacity: 1; color: #d4af37; }
-        .package-row { display: flex; gap: 10px; margin-bottom: 25px; }
-        .package-mini { flex: 1; background: white; padding: 15px; border-radius: 10px; text-align: center; border: 2px solid #eee; }
-        .package-mini.active { border-color: #d4af37; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-      `}} />
-
-      <div className="header-sovereign">
-        <h1 style={{ margin: 0, fontSize: "28px", fontWeight: 900 }}>🏛️ منصة المنصور الاستراتيجية</h1>
-        <p style={{ color: "#d4af37", marginTop: "10px", fontWeight: 700 }}>نظام الأتمتة المنهجية للتقارير الدولية</p>
+      {/* الهيدر التنفيذي */}
+      <div style={{ backgroundColor: "#0a192f", color: "white", padding: "50px 20px", textAlign: "center", borderBottom: "6px solid #d4af37" }}>
+        <h1 style={{ margin: 0, fontSize: "26px", fontWeight: 900, letterSpacing: "1px" }}>🏛️ منصة المنصور الاستراتيجية</h1>
+        <p style={{ color: "#d4af37", marginTop: "12px", fontWeight: 700, fontSize: "15px", opacity: 0.9 }}>نظام الأتمتة المنهجية للتقارير الدولية</p>
       </div>
 
-      <div className="card-container">
+      <div style={{ maxWidth: "650px", margin: "-30px auto 20px auto", padding: "0 20px" }}>
         {activeTab === 'platform' && (
           <>
-            {/* عرض الباقات المدمج */}
-            <div className="package-row">
-              <div className="package-mini">
-                <div style={{ fontSize: "11px", color: "#999" }}>مجانية</div>
-                <div style={{ fontWeight: 900 }}>0$</div>
-              </div>
-              <div className="package-mini active">
-                <div style={{ fontSize: "11px", color: "#d4af37", fontWeight: 900 }}>احترافية</div>
-                <div style={{ fontWeight: 900, color: "#0a192f" }}>50$</div>
-              </div>
-              <div className="package-mini">
-                <div style={{ fontSize: "11px", color: "#999" }}>مؤسسية</div>
-                <div style={{ fontWeight: 900 }}>200$</div>
-              </div>
-            </div>
-
-            {/* بطاقة اختيار المسار */}
-            <div className="sovereign-card">
-              <span className="label-gold">1. تحديد المسار الاستراتيجي</span>
-              <select className="sovereign-input" value={activeType} onChange={(e) => setActiveType(e.target.value)}>
+            {/* بطاقة اختيار المسار الاستراتيجي */}
+            <div style={{ background: "white", borderRadius: "15px", padding: "25px", marginBottom: "25px", boxShadow: "0 10px 30px rgba(0,0,0,0.08)", border: "1px solid #e1e8ed" }}>
+              <label style={{ color: "#d4af37", fontWeight: 900, fontSize: "13px", display: "block", marginBottom: "12px", textTransform: "uppercase" }}>1. المسار المنهجي المعتمد</label>
+              <select 
+                style={{ width: "100%", padding: "15px", borderRadius: "10px", border: "2px solid #f1f2f6", fontSize: "16px", fontFamily: "inherit", fontWeight: 700, color: "#0a192f", cursor: "pointer", background: "#fcfcfc" }}
+                value={activeType} 
+                onChange={(e) => setActiveType(e.target.value)}
+              >
                 {Object.entries(reportConfig).map(([id, cfg]) => (
                   <option key={id} value={id}>{cfg.icon} {cfg.name}</option>
                 ))}
               </select>
-              <div style={{ marginTop: "15px", fontSize: "13px", color: "#666", background: "#f8f9fa", padding: "10px", borderRadius: "8px" }}>
-                <b>المنهجية:</b> {reportConfig[activeType].desc}
+              <div style={{ marginTop: "15px", fontSize: "13px", color: "#576574", background: "#f8f9fa", padding: "12px", borderRadius: "8px", borderRight: "4px solid #d4af37", lineHeight: "1.6" }}>
+                <b>نطاق العمل:</b> {reportConfig[activeType].desc}
               </div>
             </div>
 
-            {/* بطاقة الأسئلة الديناميكية */}
-            <div className="sovereign-card" style={{ borderTop: "6px solid #d4af37" }}>
-              <div className="report-title">
-                📝 {reportConfig[activeType].name}
-                <div style={{ fontSize: "12px", color: "#888", fontWeight: 400 }}>استكمال الأبعاد المنهجية ({reportConfig[activeType].questions} حقول)</div>
-              </div>
+            {/* بطاقة الإدخال الفني */}
+            <div style={{ background: "white", borderRadius: "15px", padding: "30px", borderTop: "8px solid #0a192f", boxShadow: "0 10px 30px rgba(0,0,0,0.08)" }}>
+              <h3 style={{ color: "#0a192f", fontWeight: 900, fontSize: "20px", margin: "0 0 25px 0", borderBottom: "2px solid #f1f2f6", paddingBottom: "15px" }}>
+                📝 إدخال بيانات التقرير ({reportConfig[activeType].questions} محوراً)
+              </h3>
 
               {[...Array(reportConfig[activeType].questions)].map((_, i) => (
-                <div key={i} style={{ marginBottom: "25px" }}>
-                  <label style={{ fontWeight: 900, color: "#0a192f", display: "block" }}>
+                <div key={i} style={{ marginBottom: "30px" }}>
+                  <label style={{ fontWeight: 900, color: "#0a192f", display: "block", marginBottom: "12px", fontSize: "15px" }}>
                     {i + 1}. بُعد التحقيق الاستراتيجي رقم {i + 1}:
                   </label>
-                  <textarea className="sovereign-input" rows="3" placeholder="أدخل البيانات والوقائع الفنية هنا..."></textarea>
+                  <textarea 
+                    style={{ width: "100%", padding: "15px", borderRadius: "10px", border: "2px solid #eee", fontSize: "15px", fontFamily: "inherit", boxSizing: "border-box", background: "#fdfdfd", transition: "0.3s", minHeight: "100px" }}
+                    placeholder="يرجى تدوين الوقائع الميدانية المرصودة بدقة..."
+                  ></textarea>
                 </div>
               ))}
 
-              <button className="btn-submit" onClick={() => alert("جاري المعالجة السيادية وتوليد التقرير...")}>
+              <button style={{ backgroundColor: "#0a192f", color: "white", padding: "20px", borderRadius: "12px", width: "100%", fontWeight: 900, fontSize: "18px", border: "2px solid #d4af37", cursor: "pointer", boxShadow: "0 5px 15px rgba(10,25,47,0.3)", transition: "0.3s" }}>
                 توليد وحفظ الوثيقة الاستراتيجية 📄
               </button>
+              <p style={{ textAlign: "center", fontSize: "11px", color: "#bdc3c7", marginTop: "20px", fontWeight: 700, textTransform: "uppercase" }}>تم التطوير وفق معايير المنظمات الدولية (INGOs)</p>
             </div>
           </>
         )}
-
-        {activeTab === 'packages' && (
-          <div className="sovereign-card" style={{ textAlign: "center", padding: "40px 20px" }}>
-            <h2 style={{ color: "#0a192f", fontWeight: 900 }}>إدارة الاشتراكات</h2>
-            <p style={{ color: "#666", marginBottom: "30px" }}>باقة المنصور الاحترافية تمكنك من إصدار 10 تقارير شهرياً بدعم كامل للذكاء الاصطناعي.</p>
-            <button className="btn-submit">ترقية الحساب الآن</button>
-          </div>
-        )}
       </div>
 
-      <nav className="bottom-nav">
-        <button className={`nav-btn ${activeTab === 'platform' ? 'active' : ''}`} onClick={() => setActiveTab('platform')}>🏠 المنصة</button>
-        <button className={`nav-btn ${activeTab === 'packages' ? 'active' : ''}`} onClick={() => setActiveTab('packages')}>💳 الباقات</button>
-        <button className={`nav-btn ${activeTab === 'admin' ? 'active' : ''}`} onClick={() => setActiveTab('admin')}>⚙️ الإدارة</button>
+      {/* التنقل السفلي */}
+      <nav style={{ position: "fixed", bottom: 0, left: 0, width: "100%", background: "#0a192f", height: "80px", display: "flex", borderTop: "4px solid #d4af37", zIndex: 1000, boxShadow: "0 -5px 20px rgba(0,0,0,0.2)" }}>
+        <button style={{ flex: 1, border: "none", background: "none", color: activeTab === 'platform' ? '#d4af37' : 'white', fontWeight: 900, fontFamily: "inherit", fontSize: "15px", cursor: "pointer" }} onClick={() => setActiveTab('platform')}>🏠 المنصة</button>
+        <button style={{ flex: 1, border: "none", background: "none", color: activeTab === 'packages' ? '#d4af37' : 'white', fontWeight: 900, fontFamily: "inherit", fontSize: "15px", cursor: "pointer" }} onClick={() => setActiveTab('packages')}>💳 الباقات</button>
+        <button style={{ flex: 1, border: "none", background: "none", color: 'white', opacity: 0.5, fontWeight: 900, fontFamily: "inherit", fontSize: "15px" }}>⚙️ الإدارة</button>
       </nav>
     </div>
   );
